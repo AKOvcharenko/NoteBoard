@@ -1,0 +1,23 @@
+$full-height: 100vh;
+
+.board{
+  height: $full-height;
+  background: rebeccapurple;
+
+  .column{
+    height: $full-height;
+  }
+
+  .priority-urgent{
+    background: red;
+  }
+
+  .priority-normal{
+    background: blue;
+  }
+
+  .priority-low{
+    background: green;
+  }
+}
+
