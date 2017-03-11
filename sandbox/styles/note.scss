@@ -22,8 +22,10 @@
 
 
 .note{
-  margin: 1em;
-  display: inline-block;
+  margin:1em;
+  display:inline-block;
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:180%;
   color:#000;
   background:#ffc;
   height:10em;
@@ -36,10 +38,47 @@
   -o-transition:-o-transform .15s linear;
   -webkit-transition:-webkit-transform .15s linear;
   -ms-transition:-ms-transform .15s linear;
+
+
+  h2{
+    text-align:center;
+    margin-top:0;
+    font-weight:bold;
+  }
+
+  .button-holder{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    button {
+      opacity:0;
+      margin: 2px;
+    }
+  }
 }
 
 .note:hover{
   @include box-shadow(7px, 7px, 7px, rgba(0,0,0,.7));
   @include scale(1.15);
   z-index:5;
+
+  .button-holder{
+
+    button {
+      opacity:1
+    }
+  }
+}
+
+.priority-high{
+  background: #f8cdcd;
+}
+
+.priority-normal{
+  background: #ccf;
+}
+
+.priority-low{
+  background: #cfc;
 }

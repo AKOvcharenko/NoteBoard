@@ -22,22 +22,22 @@ class Board extends Component{
     }
 
     eachNote(note, index){
-        //let {id, title, text, priority, creationDate} = note;
-        return <Note {...note} />
+        return <Note {...note} key={index}/>
     }
 
     render(){
-        //let { noteState } = this.props.noteState;
+        let { notes } = this.props;
         return (
-/*                <div className="board container-fluid">
-                    <div className="priority-high column col-sm-4 col-xs-12"></div>
-                    <div className="priority-normal column col-sm-4 col-xs-12"></div>
-                    <div className="priority-low column col-sm-4 col-xs-12"></div>
+            notes ?
+                (<div className="board container-fluid">
+                    <div className="high column col-sm-4 col-xs-12"></div>
+                    <div className="normal column col-sm-4 col-xs-12"></div>
+                    <div className="low column col-sm-4 col-xs-12"></div>
                     <div className="notes-holder">
-                        //noteState.map(this.eachNote);
+                        {notes.map(this.eachNote)}
                     </div>
-                </div>*/
-            <Loader/>
+                </div>) :
+                <Loader/>
         )
     }
 }

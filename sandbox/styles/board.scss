@@ -2,22 +2,10 @@ $full-height: 100vh;
 
 .board{
   height: $full-height;
-  background: rebeccapurple;
+  background: #666;
 
   .column{
     height: $full-height;
-  }
-
-  .priority-high{
-    background: red;
-  }
-
-  .priority-normal{
-    background: blue;
-  }
-
-  .priority-low{
-    background: green;
   }
 }
 

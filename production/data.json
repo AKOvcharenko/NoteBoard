@@ -2,14 +2,14 @@
   {
     "id": 1,
     "title": "Call to urząd",
-    "text": "ask about document status",
+    "text": "ask about documents status",
     "priority": "high",
     "creationDate": "2017-03-01"
   },
   {
     "id": 2,
     "title": "Submit tax declaration",
-    "text": "i should do it till and of april",
+    "text": "i should do it till the end of the april",
     "priority": "normal",
     "creationDate": "2017-03-03"
   },
@@ -23,7 +23,7 @@
   {
     "id": 4,
     "title": "Bugs on Etihad",
-    "text": "Should call to discuss possible solutions",
+    "text": "Should call them and discuss possible solutions",
     "priority": "high",
     "creationDate": "2017-03-08"
   },
@@ -51,7 +51,7 @@
   {
     "id": 8,
     "title": "Call mom",
-    "text": "She waiting answer about vacation, but it is in 3 months",
+    "text": "She waits answer about vacation, but it is in 3 months",
     "priority": "low",
     "creationDate": "2017-03-04"
   }
