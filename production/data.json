@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Call to urząd",
+    "text": "ask about document status",
+    "priority": "high",
+    "creationDate": "2017-03-01"
+  },
+  {
+    "id": 2,
+    "title": "Submit tax declaration",
+    "text": "i should do it till and of april",
+    "priority": "normal",
+    "creationDate": "2017-03-03"
+  },
+  {
+    "id": 3,
+    "title": "Corey called",
+    "text": "Corey asked about weekends",
+    "priority": "low",
+    "creationDate": "2017-03-07"
+  },
+  {
+    "id": 4,
+    "title": "Bugs on Etihad",
+    "text": "Should call to discuss possible solutions",
+    "priority": "high",
+    "creationDate": "2017-03-08"
+  },
+  {
+    "id": 5,
+    "title": "Email from Rafal",
+    "text": "Need to answer him",
+    "priority": "medium",
+    "creationDate": "2017-03-06"
+  },
+  {
+    "id": 6,
+    "title": "Polish classes",
+    "text": "They already called twice",
+    "priority": "high",
+    "creationDate": "2017-03-07"
+  },
+  {
+    "id": 7,
+    "title": "Renew subscription for magazines",
+    "text": "in two months subscriptions will expire",
+    "priority": "low",
+    "creationDate": "2017-03-10"
+  },
+  {
+    "id": 8,
+    "title": "Call mom",
+    "text": "She waiting answer about vacation, but it is in 3 months",
+    "priority": "low",
+    "creationDate": "2017-03-04"
+  }
+]
