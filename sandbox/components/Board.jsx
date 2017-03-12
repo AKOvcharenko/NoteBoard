@@ -1,4 +1,4 @@
-import { setInitialNotes } from './../store/actions/actionSetInitialNotes';
+import { setInitialNotes } from './../store/actions/actionsNotes';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './../styles/board.scss';

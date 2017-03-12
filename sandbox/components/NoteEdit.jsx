@@ -13,21 +13,21 @@ class NoteEdit extends Component{
         return (
             <div className={`note editing priority-${priority}`}>
                 <form onSubmit={this.submitHandler}>
-                    <input placeholder="Title" type="text" className="title form-control" defaultValue={title}/>
-                    <textarea placeholder="Smth interesting" className="form-control" defaultValue={text}></textarea>
+                    <input placeholder="Title" type="text" className="title form-control" key={`key-title-id-${id}`} onChange={this.changeHandler} value={title}/>
+                    <textarea placeholder="Smth interesting" className="form-control" key={`key-text-id-${id}`} defaultValue={text}/>
                     <div className="radio-holder">
                         <label className="radio-inline">
-                            <input type="radio" name={id} onChange={this.changeHandler} defaultChecked={priority === 'high'} /> Major
+                            <input type="radio" name={id} onChange={this.changeHandler} key={`key-radio-id-${id}`}  defaultChecked={priority === 'high'} /> Major
                         </label>
                         <label className="radio-inline">
-                            <input type="radio" name={id} onChange={this.changeHandler} defaultChecked={priority === 'normal'}/> Average
+                            <input type="radio" name={id} onChange={this.changeHandler} key={`key-radio-id-${id}`} defaultChecked={priority === 'normal'}/> Average
                         </label>
                         <label className="radio-inline">
-                            <input  type="radio" name={id} onChange={this.changeHandler} defaultChecked={priority === 'low'}/> Low
+                            <input  type="radio" name={id} onChange={this.changeHandler} key={`key-radio-id-${id}`} defaultChecked={priority === 'low'}/> Low
                         </label>
                     </div>
                     <div className="input-group">
-                        <input  defaultValue={creationDate} placeholder="DD/MM/YYYY" className="form-control" type="text" pattern="\d{2}/\d{2}/\d{4}"
+                        <input  defaultValue={creationDate} key={`key-date-id-${id}`} placeholder="DD/MM/YYYY" className="form-control" type="text" pattern="\d{2}/\d{2}/\d{4}"
                                title="DD/MM/YYYY"/>
                       <span className="input-group-btn">
                         <button className="btn btn-default" type="submit">Save</button>

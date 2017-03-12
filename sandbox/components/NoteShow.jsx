@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
-import { setInitialNotes } from './../store/actions/actionSetInitialNotes';
-import { connect } from 'react-redux';
 
 class NoteShow extends Component{
 
-    removeNote(){
-
-    }
-
     render(){
-        let {id, title, text, priority, creationDate} = this.props;
+        let {id, title, text, priority, creationDate, removeNote, editNote} = this.props;
         return (
             <div className={`note priority-${priority}`}>
                 <h2>{title}</h2>
                 <p>{text}</p>
                 <span className="button-holder">
-                    <button className="btn btn-default">EDIT</button>
-                    <button className="btn btn-default">X</button>
+                    <button className="btn btn-default" onClick={editNote.bind(this)}>EDIT</button>
+                    <button className="btn btn-default" onClick={removeNote.bind(this)}>X</button>
                 </span>
             </div>
         )
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NoteShow);
+export default NoteShow;
