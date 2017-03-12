@@ -4,55 +4,63 @@
     "title": "Call to urząd",
     "text": "ask about documents status",
     "priority": "high",
-    "creationDate": "2017-03-01"
+    "creationDate": "03/03/2017",
+    "editing": true
   },
   {
     "id": 2,
     "title": "Submit tax declaration",
     "text": "i should do it till the end of the april",
     "priority": "normal",
-    "creationDate": "2017-03-03"
+    "creationDate": "03/03/2017",
+    "editing": true
   },
   {
     "id": 3,
     "title": "Corey called",
     "text": "Corey asked about weekends",
     "priority": "low",
-    "creationDate": "2017-03-07"
+    "creationDate": "07/03/2017",
+    "editing": false
   },
   {
     "id": 4,
     "title": "Bugs on Etihad",
     "text": "Should call them and discuss possible solutions",
     "priority": "high",
-    "creationDate": "2017-03-08"
+    "creationDate": "08/03/2017",
+    "editing": false
   },
   {
     "id": 5,
     "title": "Email from Rafal",
     "text": "Need to answer him",
-    "priority": "medium",
-    "creationDate": "2017-03-06"
+    "priority": "normal",
+    "creationDate": "06/03/2017",
+    "editing": false
   },
   {
     "id": 6,
     "title": "Polish classes",
     "text": "They already called twice",
     "priority": "high",
-    "creationDate": "2017-03-07"
+    "creationDate": "09/03/2017",
+    "editing": false
   },
   {
     "id": 7,
     "title": "Renew subscription for magazines",
     "text": "in two months subscriptions will expire",
     "priority": "low",
-    "creationDate": "2017-03-10"
+    "creationDate": "10/03/2017",
+    "editing": false
   },
   {
     "id": 8,
     "title": "Call mom",
     "text": "She waits answer about vacation, but it is in 3 months",
     "priority": "low",
-    "creationDate": "2017-03-04"
+    "creationDate": "12/03/2017",
+    "editing": false
   }
 ]

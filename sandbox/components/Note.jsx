@@ -1,20 +1,14 @@
 import React, { Component } from 'react';
+import NoteEdit from './NoteEdit.jsx';
+import NoteShow from './NoteShow.jsx';
 import './../styles/note.scss';
+class Note extends Component{   
 
-class Note extends Component{
-    
     render(){
-        let {id, title, text, priority, creationDate} = this.props;
+        let {editing} = this.props;
         return (
-                <div className={`note priority-${priority}`}>
-                    <h2>{title}</h2>
-                    <p>{text}</p>
-                    <span className="button-holder">
-                      <button className="btn btn-default">EDIT</button>
-                      <button className="btn btn-default">X</button>
-                    </span>
-                </div>
-        )
+                editing ? <NoteEdit {...this.props}/> : <NoteShow {...this.props}/>
+        );
     }
 }
 

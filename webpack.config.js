@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-    entry: './sandbox/index.js',
+    entry: ['babel-polyfill', './sandbox/index.js'],
     output: {
         path: path.join(__dirname, "production"),
         filename: 'bundle.js'
@@ -20,7 +20,7 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.scss$/,
+                test: /\.css$|.scss$/,
                 exclude: /(node_modules)/,
                 loader: 'style-loader!css-loader!sass-loader'
             }

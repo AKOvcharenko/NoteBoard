@@ -30,9 +30,9 @@ class Board extends Component{
         return (
             notes ?
                 (<div className="board container-fluid">
-                    <div className="high column col-sm-4 col-xs-12"></div>
-                    <div className="normal column col-sm-4 col-xs-12"></div>
-                    <div className="low column col-sm-4 col-xs-12"></div>
+                    <div className="priority-high column col-sm-4 col-xs-12"></div>
+                    <div className="priority-normal column col-sm-4 col-xs-12"></div>
+                    <div className="priority-low column col-sm-4 col-xs-12"></div>
                     <div className="notes-holder">
                         {notes.map(this.eachNote)}
                     </div>
