@@ -7,5 +7,10 @@ $full-height: 100vh;
   .column{
     height: $full-height;
   }
+  
+  .react-draggable{/*
+    display: inline-block;*/
+    position: absolute;
+  }
 }
 

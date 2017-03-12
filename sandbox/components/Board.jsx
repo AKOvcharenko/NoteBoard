@@ -21,8 +21,8 @@ class Board extends Component{
         fetch('data.json').then(response=>response.json()).then(json => this.props.setInitialNotes(json));
     }
 
-    eachNote(note, index){
-        return <Note {...note} key={index}/>
+    eachNote(note){
+        return <Note {...note} key={note.id}/>
     }
 
     render(){

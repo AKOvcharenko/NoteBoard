@@ -5,7 +5,7 @@
     "text": "ask about documents status",
     "priority": "high",
     "creationDate": "03/03/2017",
-    "editing": true
+    "editing": false
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "text": "i should do it till the end of the april",
     "priority": "normal",
     "creationDate": "03/03/2017",
-    "editing": true
+    "editing": false
   },
   {
     "id": 3,

@@ -5,6 +5,9 @@ import NoteEdit from './NoteEdit.jsx';
 import NoteShow from './NoteShow.jsx';
 import './../styles/note.scss';
 
+import Draggable from 'react-draggable';
+
+
 
 const mapStateToProps = state =>({});
 const mapDispatchToProps = dispatch =>({
@@ -19,12 +22,16 @@ const mapDispatchToProps = dispatch =>({
     }
 });
 
-class Note extends Component{   
+class Note extends Component{
 
     render(){
         let {editing} = this.props;
         return (
-                editing ? <NoteEdit {...this.props}/> : <NoteShow {...this.props}/>
+            <Draggable axis="both" disabled={editing} bounds="body">
+                <div>
+                    {editing ? <NoteEdit {...this.props}/> : <NoteShow {...this.props}/>}
+                </div>
+            </Draggable>
         );
     }
 }
