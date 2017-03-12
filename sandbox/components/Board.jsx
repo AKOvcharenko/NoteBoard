@@ -1,9 +1,10 @@
 import { setInitialNotes } from './../store/actions/actionsNotes';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './../styles/board.scss';
-import Note from './Note.jsx';
 import Loader from './Loader.jsx';
+import AddButton from './AddButton.jsx';
+import './../styles/add-button.scss';
+import Note from './Note.jsx';
 import 'whatwg-fetch';
 
 const mapStateToProps = state =>({notes: state.noteState});
@@ -36,6 +37,7 @@ class Board extends Component{
                     <div className="notes-holder">
                         {notes.map(this.eachNote)}
                     </div>
+                    <AddButton/>
                 </div>) :
                 <Loader/>
         )

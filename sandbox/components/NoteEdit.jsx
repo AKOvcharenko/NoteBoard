@@ -39,13 +39,13 @@ class NoteEdit extends Component{
                     <textarea placeholder="Smth interesting" ref="text" className="form-control" key={`key-text-id-${id}`} defaultValue={text}/>
                     <div className="radio-holder">
                         <label className="radio-inline">
-                            <input type="radio" name={id} onChange={this.changeRadio} value="high" key={`key-radio-id-${id}`}  defaultChecked={priority === 'high'} /> Major
+                            <input type="radio" name={id} onChange={this.changeRadio} value="high" key={`key-radio-id-${id}`}  defaultChecked={priority === 'high'} required /> Major
                         </label>
                         <label className="radio-inline">
-                            <input type="radio" name={id} onChange={this.changeRadio} value="normal" key={`key-radio-id-${id}`} defaultChecked={priority === 'normal'}/> Average
+                            <input type="radio" name={id} onChange={this.changeRadio} value="normal" key={`key-radio-id-${id}`} defaultChecked={priority === 'normal'} required /> Average
                         </label>
                         <label className="radio-inline">
-                            <input  type="radio" name={id} onChange={this.changeRadio} value="low" key={`key-radio-id-${id}`} defaultChecked={priority === 'low'}/> Low
+                            <input  type="radio" name={id} onChange={this.changeRadio} value="low" key={`key-radio-id-${id}`} defaultChecked={priority === 'low'} required /> Low
                         </label>
                     </div>
                     <div className="input-group">

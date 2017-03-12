@@ -1,0 +1,28 @@
+@mixin transition($transition, $duration) {
+  -moz-transition:    $transition, $duration;
+  -o-transition:      $transition, $duration;
+  -webkit-transition: $transition, $duration;
+  transition:         $transition, $duration;
+}
+
+.add-note {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 10px;
+  opacity: 0.6;
+  position: fixed;
+  z-index: 10;
+  right: 20px;
+  bottom: 20px;
+  @include transition(all, 0.25s);
+}
+
+.add-note:hover {
+  opacity: 1;
+}
+
+

@@ -11,6 +11,10 @@ const editNote = (state, id) => {
 
 const updateNote = (state, data) =>[...(state.filter(note =>{return note.id !== data.id})), data];
 
+const addNote = (state, data) =>[...state, data];
+
+
+
 
 
 const noteState = (state=[], action) =>{
@@ -23,6 +27,8 @@ const noteState = (state=[], action) =>{
             return editNote(state, action.id);
         case "UPDATE_NOTE":
             return updateNote(state, action.data);
+        case "ADD_NOTE":
+            return addNote(state, action.data);
         default:
             return state;
     }

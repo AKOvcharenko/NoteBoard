@@ -6,4 +6,6 @@ const editNote = id =>({type: "EDIT_NOTE", id});
 
 const updateNote = data =>({type: "UPDATE_NOTE", data});
 
-export {setInitialNotes, removeNote, editNote, updateNote};
+const addNote = data => ({type: "ADD_NOTE", data});
+
+export {setInitialNotes, removeNote, editNote, updateNote, addNote};
