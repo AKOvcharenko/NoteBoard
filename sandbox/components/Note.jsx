@@ -1,4 +1,4 @@
-import { removeNote, editNote } from './../store/actions/actionsNotes';
+import { removeNote, editNote, updateNote } from './../store/actions/actionsNotes';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NoteEdit from './NoteEdit.jsx';
@@ -13,6 +13,9 @@ const mapDispatchToProps = dispatch =>({
     },    
     editNote(){
         dispatch(editNote(this.props.id));
+    },
+    updateNote(data){
+        dispatch(updateNote(data));
     }
 });
 

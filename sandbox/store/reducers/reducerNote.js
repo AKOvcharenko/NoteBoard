@@ -9,6 +9,8 @@ const editNote = (state, id) => {
     return [...subArray, editable];
 };
 
+const updateNote = (state, data) =>[...(state.filter(note =>{return note.id !== data.id})), data];
+
 
 
 const noteState = (state=[], action) =>{
@@ -19,6 +21,8 @@ const noteState = (state=[], action) =>{
             return removeNote(state, action.id);
         case "EDIT_NOTE":
             return editNote(state, action.id);
+        case "UPDATE_NOTE":
+            return updateNote(state, action.data);
         default:
             return state;
     }

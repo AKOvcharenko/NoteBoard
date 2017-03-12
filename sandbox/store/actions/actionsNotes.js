@@ -4,4 +4,6 @@ const removeNote = id =>({type: "REMOVE_NOTE", id});
 
 const editNote = id =>({type: "EDIT_NOTE", id});
 
-export {setInitialNotes, removeNote, editNote};
+const updateNote = data =>({type: "UPDATE_NOTE", data});
+
+export {setInitialNotes, removeNote, editNote, updateNote};

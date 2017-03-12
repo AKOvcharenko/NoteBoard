@@ -5,7 +5,7 @@ class NoteShow extends Component{
     render(){
         let {id, title, text, priority, creationDate, removeNote, editNote} = this.props;
         return (
-            <div className={`note priority-${priority}`}>
+            <div onDoubleClick={editNote.bind(this)} className={`note priority-${priority}`}>
                 <h2>{title}</h2>
                 <p>{text}</p>
                 <span className="button-holder">
