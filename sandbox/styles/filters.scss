@@ -1,0 +1,29 @@
+#filters-holder{
+
+  display: inline-block;
+
+  #filters{
+    display: inline-block;
+
+    button{
+      color: red;
+    }
+  }
+
+  input, select{
+    margin-right: 10px;
+  }
+
+  button {
+      width: 35px;
+      height: 34px;
+      text-align: center;
+      padding: 6px 0;
+      font-size: 12px;
+      border-radius: 5px;
+      margin-right: 10px;
+      line-height: 1.9;
+  }
+
+}
+

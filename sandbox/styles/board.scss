@@ -8,9 +8,15 @@ $full-height: 100vh;
     height: $full-height;
   }
   
-  .react-draggable{/*
-    display: inline-block;*/
+  .react-draggable{
     position: absolute;
+  }
+
+  .interaction-ui-holder{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
   }
 }
 

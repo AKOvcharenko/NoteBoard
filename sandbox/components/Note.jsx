@@ -1,4 +1,4 @@
-import { removeNote, editNote, updateNote } from './../store/actions/actionsNotes';
+import { removeNote, editNote, updateNote } from './../store/actions/actionsNotesState';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NoteEdit from './NoteEdit.jsx';

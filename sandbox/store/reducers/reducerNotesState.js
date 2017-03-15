@@ -19,7 +19,7 @@ const addNote = (state, data) =>[...state, data];
 
 const noteState = (state=[], action) =>{
     switch (action.type) {
-        case "SET_INITIAL_NOTE_STATE":
+        case "SET_INITIAL_NOTES_STATE":
             return initialNoteState(state, action.notes);
         case "REMOVE_NOTE":
             return removeNote(state, action.id);
