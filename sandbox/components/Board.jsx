@@ -26,7 +26,7 @@ class Board extends Component{
 
     componentWillMount(){
         const { setInitialNotes, notes } = this.props;
-        if(notes){setInitialNotes(notes); return;}
+        if(notes.length){setInitialNotes(notes); return;}
         fetch('data.json').then(response=>response.json()).then(json => setInitialNotes(json));
     }
 
