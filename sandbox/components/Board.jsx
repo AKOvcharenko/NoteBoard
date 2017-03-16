@@ -25,9 +25,8 @@ class Board extends Component{
     }
 
     componentWillMount(){
-        var data = localStorage.getItem('notes');
-        const { setInitialNotes } = this.props;
-        if(data){setInitialNotes(data); return;}
+        const { setInitialNotes, notes } = this.props;
+        if(notes){setInitialNotes(notes); return;}
         fetch('data.json').then(response=>response.json()).then(json => setInitialNotes(json));
     }
 

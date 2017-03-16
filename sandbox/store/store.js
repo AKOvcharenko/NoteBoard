@@ -1,4 +1,5 @@
 import {combineReducers, createStore} from 'redux';
+import { loadState, saveState } from './../own-modules/localStorage'
 import { noteState } from './reducers/reducerNotesState.js';
 import { filtersState } from './reducers/reducerFiltersState.js';
 
@@ -7,7 +8,11 @@ const reducers = combineReducers({
     filtersState
 });
 
-const store = createStore(reducers);
+const persistedState = loadState();
+
+const store = createStore(reducers, persistedState);
+
+store.subscribe(() => saveState({noteState: store.getState().noteState}));
 
 window.store = store;
 
