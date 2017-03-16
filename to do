@@ -1,0 +1,5 @@
+//0. filtration with dates
+1. note should appears om the same place where it was
+2. changing priority with dragging cards
+3. save state in localStorage
+4. using immutable.js for reducers

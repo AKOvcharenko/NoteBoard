@@ -1,4 +1,5 @@
 import { setInitialNotes } from './../store/actions/actionsNotesState.js';
+import {filterFunctions} from './../own-modules/filterFuncs.js';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Loader from './Loader.jsx';
@@ -7,6 +8,7 @@ import Filters from './Filters.jsx';
 import './../styles/add-button.scss';
 import Note from './Note.jsx';
 import 'whatwg-fetch';
+
 
 const mapStateToProps = state =>({notes: state.noteState, filterState: state.filtersState});
 const mapDispatchToProps = dispatch =>({
@@ -20,10 +22,6 @@ class Board extends Component{
     constructor(props){
         super(props);
         this.filterNotes = this.filterNotes.bind(this);
-        this.filterFunctions = {
-            "content-search"(arr, value){return arr.filter(el => (!el.title || !el.title) || `${el.title} ${el.text}`.indexOf(value) > -1)},
-            "priority-search"(arr, value){return arr.filter(el => (!el.priority) || el.priority.indexOf(value) > -1)}
-        }
     }
 
     componentWillMount(){
@@ -34,8 +32,8 @@ class Board extends Component{
     }
 
     filterNotes(notes, filters){
-        return ["content-search", "priority-search"/*, "date-from-search", "date-to-search"*/].reduce((prev, curr) =>{
-            return this.filterFunctions[curr].call(window, prev, filters[curr]);
+        return ["content-search", "priority-search", "date-from-search", "date-to-search"].reduce((prev, curr) =>{
+            return filterFunctions[curr].call(filterFunctions, prev, filters[curr]);
         }, [...notes]);
     };
 

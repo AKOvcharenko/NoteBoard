@@ -16,7 +16,7 @@ class AddButton extends Component{
 
     convertDate(d){
         const pad = s => s < 10 ? '0' + s : s;
-        return [pad(d.getDate()), pad(d.getMonth()+1), d.getFullYear()].join('/');
+        return [pad(d.getMonth()+1), pad(d.getDate()), d.getFullYear()].join('/');
     }
 
     addNote(){
