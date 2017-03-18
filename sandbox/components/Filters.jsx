@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './../styles/filters.scss';
 
-const mapStateToProps = state =>({filters: state.filtersState, notes: state.noteState});
+const mapStateToProps = state =>({filters: state.filtersState.toJS()});
 const mapDispatchToProps = dispatch =>({dispatch});
 
 

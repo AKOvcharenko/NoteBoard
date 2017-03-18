@@ -1,19 +1,24 @@
-const changeShowFiltersState = state => ({ ...state, hide: !state.hide });
+import { Map } from 'immutable';
 
-const changeFiltersState = (state, id, value) => ({ ...state, [id]: value });
+let initialState = Map({
+    hide: true,
+    "content-search": '',
+    "priority-search": '',
+    "date-from-search": '',
+    "date-to-search": ''
+});
 
-const dropFilters = state => ({ ...state, "content-search": '', "priority-search": '', "date-from-search": '', "date-to-search": ''});
+const changeShowFiltersState = state => state.set('hide', !state.get('hide'));
 
+const changeFiltersState = (state, id, value) => state.set(id, value);
 
+const dropFilters = state =>{
+    return ['content-search', 'priority-search', 'date-from-search', 'date-to-search'].reduce((prev, curr) =>{
+        return prev.set(curr, '');
+    }, state);
+};
 
-
-const filtersState = (state={ 
-                            hide: true,
-                            "content-search": '',
-                            "priority-search": '',
-                            "date-from-search": '',
-                            "date-to-search": ''
-                        }, action) =>{
+const filtersState = (state=initialState, action) =>{
     switch (action.type) {
         case "HIDE_SHOW":
             return changeShowFiltersState(state);

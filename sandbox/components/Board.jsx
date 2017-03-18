@@ -10,7 +10,7 @@ import Note from './Note.jsx';
 import 'whatwg-fetch';
 
 
-const mapStateToProps = state =>({notes: state.noteState, filterState: state.filtersState});
+const mapStateToProps = state =>({notes: state.noteState, filterState: state.filtersState.toJS()});
 const mapDispatchToProps = dispatch =>({
         setInitialNotes(data){
             dispatch(setInitialNotes(data));

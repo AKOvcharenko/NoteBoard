@@ -1,23 +1,18 @@
-const initialNoteState = (state, notes) => notes.map(note => ({...note}));
+import { List } from 'immutable';
+
+let initialState = List([]);
+
+const initialNoteState = (state, notes) => List(notes);
 
 const removeNote = (state, id) => state.filter(note => note.id !== id);
 
-const editNote = (state, id) => {
-    let editable;
-    let subArray = state.filter(note =>{if(note.id === id){editable = note} return note.id !== id});
-    editable.editing = true;
-    return [...subArray, editable];
-};
+const editNote = (state, id) => state.update(state.findIndex(note => note.id === id), note => {return {...note, editing : true};});
 
-const updateNote = (state, data) =>[...(state.filter(note =>{return note.id !== data.id})), data];
+const updateNote = (state, data) => state.set(state.findIndex(note => note.id === data.id), data);
 
-const addNote = (state, data) =>[...state, data];
+const addNote = (state, data) => state.push(data);
 
-
-
-
-
-const noteState = (state=[], action) =>{
+const noteState = (state=initialState, action) =>{
     switch (action.type) {
         case "SET_INITIAL_NOTES_STATE":
             return initialNoteState(state, action.notes);
