@@ -27,7 +27,7 @@ class Note extends Component{
     render(){
         let {editing} = this.props;
         return (
-            <Draggable axis="both" disabled={editing} bounds="body">
+            <Draggable axis="both" disabled={editing} >
                 <div>
                     {editing ? <NoteEdit {...this.props}/> : <NoteShow {...this.props}/>}
                 </div>

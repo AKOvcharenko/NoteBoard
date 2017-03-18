@@ -40,18 +40,22 @@ class Board extends Component{
         return <Note {...note} key={note.id}/>
     }
 
+    renderPartOfTable(filteredNotes, priority, eachNote){
+        return (
+                <div key={priority} className={`priority-${priority} column col-sm-4 col-xs-12`}>
+                    {filteredNotes.filter(note => note.priority === priority).map(eachNote)}
+                </div>
+        )
+    }
+
     render(){
         let { notes, filterState } = this.props;
         let filteredNotes = this.filterNotes(notes, filterState);
         return (
             notes ?
                 (<div className="board container-fluid">
-                    <div className="priority-high column col-sm-4 col-xs-12"></div>
-                    <div className="priority-normal column col-sm-4 col-xs-12"></div>
-                    <div className="priority-low column col-sm-4 col-xs-12"></div>
-                    <div className="notes-holder">
-                        {filteredNotes.map(this.eachNote)}
-                    </div>
+                    {['high', 'normal', 'low'].map(priority=>this.renderPartOfTable(filteredNotes, priority, this.eachNote))}
+                    {filteredNotes.filter(note => !note.priority).map(this.eachNote)}
                     <div className="interaction-ui-holder">
                         <Filters/>
                         <AddButton/>
