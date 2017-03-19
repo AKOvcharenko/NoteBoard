@@ -23,7 +23,8 @@ class AddButton extends Component{
         const {notes, dispatch} = this.props;
         let id = notes.reduce((prev, curr) => curr.id > prev ? curr.id : prev  , 0) + 1; // find biggest present id and +1
         let creationDate = this.convertDate(new Date());
-        dispatch(addNote({id, creationDate, editing:true}));
+        let position = {};
+        dispatch(addNote({id, creationDate, position, editing:true}));
     }
 
     render(){

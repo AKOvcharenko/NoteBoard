@@ -19,17 +19,32 @@ const mapDispatchToProps = dispatch =>({
     },
     updateNote(data){
         dispatch(updateNote(data));
-    }
+    }, 
 });
 
 class Note extends Component{
 
+    mouseOverHandler(event){
+        console.log(Math.floor(window.innerWidth/event.pageX))
+    }
+
+    getX(){
+        let random = Math.ceil(Math.random() * (window.innerWidth/3 - 200));
+        return this.props.position.x || random;
+    }
+
+    getY(){
+        let random = Math.ceil(Math.random()*(window.innerHeight - 200));
+        return this.props.position.y || random;
+    }
+
     render(){
         let {editing} = this.props;
+        let position ={x:this.getX(), y: this.getY()};
         return (
-            <Draggable axis="both" disabled={editing} >
+            <Draggable defaultPosition={position}  onStop  = {this.mouseOverHandler}  axis="both" disabled={editing} >
                 <div>
-                    {editing ? <NoteEdit {...this.props}/> : <NoteShow {...this.props}/>}
+                    {editing ? <NoteEdit {...this.props} position={position} /> : <NoteShow {...this.props}/>}
                 </div>
             </Draggable>
         );

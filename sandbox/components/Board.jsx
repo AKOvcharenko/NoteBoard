@@ -53,7 +53,7 @@ class Board extends Component{
         let filteredNotes = this.filterNotes(notes, filterState);
         return (
             notes ?
-                (<div className="board container-fluid">
+                (<div  className="board container-fluid">
                     {['high', 'normal', 'low'].map(priority=>this.renderPartOfTable(filteredNotes, priority, this.eachNote))}
                     {filteredNotes.filter(note => !note.priority).map(this.eachNote)}
                     <div className="interaction-ui-holder">

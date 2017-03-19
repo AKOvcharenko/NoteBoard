@@ -5,6 +5,7 @@ $full-height: 100vh;
   background: #666;
   overflow: hidden;
 
+
   .column{
     height: $full-height;
   }
@@ -12,6 +13,10 @@ $full-height: 100vh;
   .react-draggable{
     position: absolute;
     z-index: 2;
+  }
+
+  .react-draggable:hover{
+    z-index: 6;
   }
 
   .react-draggable-dragging{
@@ -30,6 +35,8 @@ $full-height: 100vh;
     left: 50%;
     margin-top: -130px;
     margin-left: -130px;
+    position: fixed;
+    transform: translate(0, 0)!important;
   }
 }
 

@@ -8,9 +8,14 @@ const removeNote = (state, id) => state.filter(note => note.id !== id);
 
 const editNote = (state, id) => state.update(state.findIndex(note => note.id === id), note => {return {...note, editing : true};});
 
-const updateNote = (state, data) => state.set(state.findIndex(note => note.id === data.id), data);
+const updateNote = (state, data) => {
+    debugger
+    return state.set(state.findIndex(note => note.id === data.id), data);
+}
 
 const addNote = (state, data) => state.push(data);
+
+const dragNote = (state, id, position) => state.update(state.findIndex(note => note.id === id), note => {return {...note, position};});
 
 const noteState = (state=initialState, action) =>{
     switch (action.type) {
@@ -24,6 +29,8 @@ const noteState = (state=initialState, action) =>{
             return updateNote(state, action.data);
         case "ADD_NOTE":
             return addNote(state, action.data);
+        case "DRAGG_NOTE":
+            return draggNote(state, action.id, action.position);
         default:
             return state;
     }

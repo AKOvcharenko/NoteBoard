@@ -13,7 +13,8 @@ class NoteEdit extends Component{
     }
 
     collectData(){
-        let data = {"editing": false, id:this.props.id, priority: this.priority};
+        let { id, position} = this.props;
+        let data = {"editing": false, id, position, priority: this.priority};
         let refs = ['title', 'text', 'creationDate'];
 
         return refs.reduce((prev, curr) =>{

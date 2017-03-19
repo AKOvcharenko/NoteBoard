@@ -5,7 +5,11 @@
     "text": "ask about documents status",
     "priority": "high",
     "creationDate": "03/03/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 50
+    }
   },
   {
     "id": 2,
@@ -13,7 +17,11 @@
     "text": "i should do it till the end of the april",
     "priority": "normal",
     "creationDate": "03/03/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 50
+    }
   },
   {
     "id": 3,
@@ -21,7 +29,11 @@
     "text": "Corey asked about weekends",
     "priority": "low",
     "creationDate": "03/07/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 50
+    }
   },
   {
     "id": 4,
@@ -29,7 +41,11 @@
     "text": "Should call them and discuss possible solutions",
     "priority": "high",
     "creationDate": "03/08/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 250
+    }
   },
   {
     "id": 5,
@@ -37,7 +53,11 @@
     "text": "Need to answer him",
     "priority": "normal",
     "creationDate": "03/06/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 250
+    }
   },
   {
     "id": 6,
@@ -45,7 +65,11 @@
     "text": "They already called twice",
     "priority": "high",
     "creationDate": "03/09/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 450
+    }
   },
   {
     "id": 7,
@@ -53,7 +77,11 @@
     "text": "in two months subscriptions will expire",
     "priority": "low",
     "creationDate": "03/20/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 250
+    }
   },
   {
     "id": 8,
@@ -61,6 +89,10 @@
     "text": "She waits answer about vacation, but it is in 3 months",
     "priority": "low",
     "creationDate": "03/12/2017",
-    "editing": false
+    "editing": false,
+    "position":{
+      "x": 20,
+      "y": 450
+    }
   }
 ]

@@ -65,7 +65,6 @@
 .note:hover{
   @include box-shadow(7px, 7px, 7px, rgba(0,0,0,.7));
   @include scale(1.15);
-  z-index:5;
 
   .title{
     margin-bottom: 10px;
