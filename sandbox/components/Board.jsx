@@ -1,11 +1,12 @@
 import { setInitialNotes } from './../store/actions/actionsNotesState.js';
 import {filterFunctions} from './../own-modules/filterFuncs.js';
+import { constants } from './../constants/constants.js';
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Loader from './Loader.jsx';
 import AddButton from './AddButton.jsx';
-import Filters from './Filters.jsx';
+import { connect } from 'react-redux';
 import './../styles/add-button.scss';
+import Filters from './Filters.jsx';
+import Loader from './Loader.jsx';
 import Note from './Note.jsx';
 import 'whatwg-fetch';
 
@@ -31,7 +32,7 @@ class Board extends Component{
     }
 
     filterNotes(notes, filters){
-        return ["content-search", "priority-search", "date-from-search", "date-to-search"].reduce((prev, curr) =>{
+        return [constants.CONTENT_FILTER, constants.PRIORITY_FILTER, constants.DATE_FROM_FILTER, constants.DATE_TO_FILTER].reduce((prev, curr) =>{
             return filterFunctions[curr].call(filterFunctions, prev, filters[curr]);
         }, [...notes]);
     };
