@@ -14,10 +14,10 @@ const constants = {
     DRAG_NOTE: "DRAG_NOTE",
     ADD_NOTE: "ADD_NOTE",
 
-    CONTENT_SEARCH_FILTER: "content-search",
-    PRIORITY_SEARCH_FILTER: "priority-search",
-    DATE_FROM_SEARCH: "date-from-search",
-    DATE_TO_SEARCH: "date-to-search"
+    CONTENT_FILTER: "content-search",
+    PRIORITY_FILTER: "priority-search",
+    DATE_FROM_FILTER: "date-from-search",
+    DATE_TO_FILTER: "date-to-search"
 };
 
 export {constants}
