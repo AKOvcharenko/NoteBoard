@@ -32,7 +32,8 @@ class NoteEdit extends Component{
     changeHandler(){}
 
     keyDownHandler(event){
-        if(event.keyCode == 27){this.props.removeNote.call(this)}
+        const { addingState, removeNote} = this.props;
+        if(addingState && event.keyCode == 27){removeNote.call(this);}
     }
 
     render(){

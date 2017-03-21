@@ -8,7 +8,7 @@ import NoteShow from './NoteShow.jsx';
 import './../styles/note.scss';
 
 
-const mapStateToProps = state =>({});
+const mapStateToProps = state =>({addingState: state.addingState.toJS().adding});
 const mapDispatchToProps = dispatch =>({
     removeNote(){
         dispatch(removeNote(this.props.id));
