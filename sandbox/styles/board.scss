@@ -38,22 +38,25 @@ $full-height: 100vh;
     position: fixed;
     transform: none!important;
     z-index: 10;
+
+    .just-added-note .shadow{
+      position: fixed;
+      content: '';
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 9;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .just-added-note .note{
+      z-index: 10;
+    }
+
   }
 
-  .just-added-note .shadow{
-    position: fixed;
-    content: '';
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 9;
-    background: rgba(0, 0, 0, 0.6);
-  }
 
-  .just-added-note .note{
-    z-index: 10;
-  }
 
 }
 
