@@ -1,9 +1,10 @@
+import { changeAddingState } from './../store/actions/actionsAddingState';
 import { addNote } from './../store/actions/actionsNotesState';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './../styles/board.scss';
 
-const mapStateToProps = state =>({notes: state.noteState});
+const mapStateToProps = state =>({notes: state.noteState, addingState: state.addingState.toJS().adding});
 const mapDispatchToProps = dispatch =>({dispatch});
 
 
@@ -25,11 +26,12 @@ class AddButton extends Component{
         let creationDate = this.convertDate(new Date());
         let position = {};
         dispatch(addNote({id, creationDate, position, editing:true}));
+        dispatch(changeAddingState(true));
     }
 
     render(){
         return (
-            <button onClick={this.addNote} type="button" className="btn btn-lg btn-success add-note"><i className="glyphicon glyphicon-plus"/></button>
+            <button disabled={this.props.addingState} onClick={this.addNote} type="button" className="btn btn-lg btn-success add-note"><i className="glyphicon glyphicon-plus"/></button>
         )
     }
 }

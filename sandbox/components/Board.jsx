@@ -9,19 +9,19 @@ import './../styles/add-button.scss';
 import Note from './Note.jsx';
 import 'whatwg-fetch';
 
+const mapStateToProps = state => ({notes: state.noteState, filterState: state.filtersState.toJS()});
 
-const mapStateToProps = state =>({notes: state.noteState, filterState: state.filtersState.toJS()});
 const mapDispatchToProps = dispatch =>({
-        setInitialNotes(data){
-            dispatch(setInitialNotes(data));
-        }
-    });
+    setInitialNotes(data){
+        dispatch(setInitialNotes(data));
+    }
+});
 
 class Board extends Component{
 
     constructor(props){
         super(props);
-        this.filterNotes = this.filterNotes.bind(this);
+        ['filterNotes'].forEach(func => this[func] = this[func].bind(this));
     }
 
     componentWillMount(){
@@ -42,9 +42,9 @@ class Board extends Component{
 
     renderPartOfTable(filteredNotes, priority, eachNote){
         return (
-                <div key={priority} className={`priority-${priority} column col-sm-4 col-xs-12`}>
-                    {filteredNotes.filter(note => note.priority === priority).map(eachNote)}
-                </div>
+            <div key={priority} className={`priority-${priority} column col-sm-4 col-xs-12`}>
+                {filteredNotes.filter(note => note.priority === priority).map(eachNote)}
+            </div>
         )
     }
 

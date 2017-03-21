@@ -5,7 +5,7 @@ class NoteEdit extends Component{
     constructor(props) {
         super(props);
         this.priority = this.props.priority;
-        ['submitHandler', 'collectData', 'changeRadio'].forEach(func => this[func] = this[func].bind(this));
+        ['submitHandler', 'collectData', 'changeRadio', 'keyDownHandler', 'changeHandler'].forEach(func => this[func] = this[func].bind(this));
     }
 
     changeRadio(event){
@@ -31,32 +31,40 @@ class NoteEdit extends Component{
 
     changeHandler(){}
 
+    keyDownHandler(event){
+        if(event.keyCode == 27){this.props.removeNote.call(this)}
+    }
+
     render(){
-        let {id, title, text, priority, creationDate} = this.props;
+        let {id, title, text, priority, creationDate, removeNote} = this.props;
+        let { keyDownHandler, submitHandler, changeRadio, changeHandler } = this;
         return (
-            <div className={`note editing priority-${priority}`}>
-                <form onSubmit={this.submitHandler}>
-                    <input placeholder="Title" type="text" ref="title" className="title form-control" key={`key-title-id-${id}`} onChange={this.changeHandler} defaultValue={title}/>
-                    <textarea placeholder="Smth interesting" ref="text" className="form-control" key={`key-text-id-${id}`} defaultValue={text}/>
-                    <div className="radio-holder">
-                        <label className="radio-inline">
-                            <input type="radio" name={id} onChange={this.changeRadio} value="high" key={`key-radio-id-${id}`}  defaultChecked={priority === 'high'} required /> Major
-                        </label>
-                        <label className="radio-inline">
-                            <input type="radio" name={id} onChange={this.changeRadio} value="normal" key={`key-radio-id-${id}`} defaultChecked={priority === 'normal'} required /> Average
-                        </label>
-                        <label className="radio-inline">
-                            <input  type="radio" name={id} onChange={this.changeRadio} value="low" key={`key-radio-id-${id}`} defaultChecked={priority === 'low'} required /> Low
-                        </label>
-                    </div>
-                    <div className="input-group">
-                        <input  defaultValue={creationDate} ref="creationDate" key={`key-date-id-${id}`} placeholder="DD/MM/YYYY" className="form-control" type="text" pattern="\d{2}/\d{2}/\d{4}"
-                               title="DD/MM/YYYY"/>
-                      <span className="input-group-btn">
-                        <button className="btn btn-default" type="submit">Save</button>
-                      </span>
-                    </div>
-                </form>
+            <div onKeyDown={keyDownHandler} className="just-added-note">
+                <div onClick={removeNote.bind(this)} className="shadow"></div>
+                <div className={`note editing priority-${priority}`}>
+                    <form onSubmit={submitHandler}>
+                        <input placeholder="Title" type="text" ref="title" className="title form-control" key={`key-title-id-${id}`} onChange={changeHandler} defaultValue={title}/>
+                        <textarea placeholder="Smth interesting" ref="text" className="form-control" key={`key-text-id-${id}`} defaultValue={text}/>
+                        <div className="radio-holder">
+                            <label className="radio-inline">
+                                <input type="radio" name={id} onChange={changeRadio} value="high" key={`key-radio-id-${id}`}  defaultChecked={priority === 'high'} required /> Major
+                            </label>
+                            <label className="radio-inline">
+                                <input type="radio" name={id} onChange={changeRadio} value="normal" key={`key-radio-id-${id}`} defaultChecked={priority === 'normal'} required /> Average
+                            </label>
+                            <label className="radio-inline">
+                                <input  type="radio" name={id} onChange={changeRadio} value="low" key={`key-radio-id-${id}`} defaultChecked={priority === 'low'} required /> Low
+                            </label>
+                        </div>
+                        <div className="input-group">
+                            <input  defaultValue={creationDate} ref="creationDate" key={`key-date-id-${id}`} placeholder="DD/MM/YYYY" className="form-control" type="text" pattern="\d{2}/\d{2}/\d{4}"
+                                   title="DD/MM/YYYY"/>
+                          <span className="input-group-btn">
+                            <button className="btn btn-default" type="submit">Save</button>
+                          </span>
+                        </div>
+                    </form>
+                </div>
             </div>
         )
     }

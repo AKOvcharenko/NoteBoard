@@ -1,4 +1,5 @@
 import { removeNote, editNote, updateNote, dragNote, dragChangePriority } from './../store/actions/actionsNotesState';
+import { changeAddingState } from './../store/actions/actionsAddingState';
 import React, { Component } from 'react';
 import Draggable from 'react-draggable';
 import { connect } from 'react-redux';
@@ -11,12 +12,14 @@ const mapStateToProps = state =>({});
 const mapDispatchToProps = dispatch =>({
     removeNote(){
         dispatch(removeNote(this.props.id));
+        dispatch(changeAddingState(false));
     },    
     editNote(){
         dispatch(editNote(this.props.id));
     },
     updateNote(data){
         dispatch(updateNote(data));
+        dispatch(changeAddingState(false));
     },
     dragNote(id, position){
         dispatch(dragNote(id, position));

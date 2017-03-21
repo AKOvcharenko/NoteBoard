@@ -1,7 +1,13 @@
+import { Map } from 'immutable';
+
 const loadState = () =>{
     try{
         const serializedState = localStorage.getItem('state');
-        if(serializedState !== null){return JSON.parse(serializedState);}
+        let state;
+        if(serializedState !== null){
+            state = JSON.parse(serializedState);
+            return { ...state, addingState: Map(state.addingState)};
+        }
     }catch(e){}
 };
 
