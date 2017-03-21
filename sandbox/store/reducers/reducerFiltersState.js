@@ -1,4 +1,6 @@
+import { constants } from './../../constants/constants.js';
 import { Map } from 'immutable';
+
 
 let initialState = Map({
     hide: true,
@@ -20,11 +22,11 @@ const dropFilters = state =>{
 
 const filtersState = (state=initialState, action) =>{
     switch (action.type) {
-        case "HIDE_SHOW":
+        case constants.HIDE_SHOW_FILTERS:
             return changeShowFiltersState(state);
-        case "FILTER_CHANGED":
+        case constants.FILTER_CHANGED:
             return changeFiltersState(state, action.id, action.value);
-        case "FILTERS_DROPPED":
+        case constants.FILTERS_DROPPED:
             return dropFilters(state);
         default:
             return state;
