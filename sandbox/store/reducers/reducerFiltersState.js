@@ -4,10 +4,10 @@ import { Map } from 'immutable';
 
 let initialState = Map({
     hide: true,
-    "content-search": '',
-    "priority-search": '',
-    "date-from-search": '',
-    "date-to-search": ''
+    [constants.CONTENT_FILTER]: '',
+    [constants.PRIORITY_FILTER]: '',
+    [constants.DATE_FROM_FILTER]: '',
+    [constants.DATE_TO_FILTER]: ''
 });
 
 const changeShowFiltersState = state => state.set('hide', !state.get('hide'));
@@ -15,7 +15,7 @@ const changeShowFiltersState = state => state.set('hide', !state.get('hide'));
 const changeFiltersState = (state, id, value) => state.set(id, value);
 
 const dropFilters = state =>{
-    return ['content-search', 'priority-search', 'date-from-search', 'date-to-search'].reduce((prev, curr) =>{
+    return [constants.CONTENT_FILTER, constants.PRIORITY_FILTER, constants.DATE_FROM_FILTER, constants.DATE_TO_FILTER].reduce((prev, curr) =>{
         return prev.set(curr, '');
     }, state);
 };
