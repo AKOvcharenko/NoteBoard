@@ -1,3 +1,4 @@
+import { constants } from './../../constants/constants.js';
 import { List } from 'immutable';
 
 let initialState = List([]);
@@ -24,19 +25,19 @@ const dragChangePriority = (state, id, priority, position) => state.update(
 
 const noteState = (state=initialState, action) =>{
     switch (action.type) {
-        case "SET_INITIAL_NOTES_STATE":
+        case constants.SET_INITIAL_NOTES_STATE:
             return initialNoteState(state, action.notes);
-        case "REMOVE_NOTE":
+        case constants.REMOVE_NOTE:
             return removeNote(state, action.id);
-        case "EDIT_NOTE":
+        case constants.EDIT_NOTE:
             return editNote(state, action.id);
-        case "UPDATE_NOTE":
+        case constants.UPDATE_NOTE:
             return updateNote(state, action.data);
-        case "ADD_NOTE":
+        case constants.ADD_NOTE:
             return addNote(state, action.data);
-        case "DRAG_NOTE":
+        case constants.DRAG_NOTE:
             return dragNote(state, action.id, action.position);
-        case "DRAG_CHANGE_PRIORITY_NOTE":
+        case constants.DRAG_CHANGE_PRIORITY_NOTE:
             return dragChangePriority(state, action.id, action.priority, action.position);
         default:
             return state;

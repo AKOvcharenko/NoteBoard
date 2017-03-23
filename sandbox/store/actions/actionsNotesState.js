@@ -1,16 +1,19 @@
-const setInitialNotes = notes =>({type: "SET_INITIAL_NOTES_STATE", notes});
+import { constants } from './../../constants/constants.js';
 
-const removeNote = id =>({type: "REMOVE_NOTE", id});
 
-const editNote = id =>({type: "EDIT_NOTE", id});
+const dragChangePriority = (id, priority, position) => ({type: constants.DRAG_CHANGE_PRIORITY_NOTE, id, priority, position});
 
-const updateNote = data =>({type: "UPDATE_NOTE", data});
+const setInitialNotes = notes =>({type: constants.SET_INITIAL_NOTES_STATE, notes});
 
-const addNote = data => ({type: "ADD_NOTE", data});
+const dragNote = (id, position) => ({type: constants.DRAG_NOTE, id, position});
 
-const dragNote = (id, position) => ({type: "DRAG_NOTE", id, position});
+const updateNote = data =>({type: constants.UPDATE_NOTE, data});
 
-const dragChangePriority = (id, priority, position) => ({type: "DRAG_CHANGE_PRIORITY_NOTE", id, priority, position});
+const removeNote = id =>({type: constants.REMOVE_NOTE, id});
+
+const addNote = data => ({type: constants.ADD_NOTE, data});
+
+const editNote = id =>({type: constants.EDIT_NOTE, id});
 
 
 export {setInitialNotes, removeNote, editNote, updateNote, addNote, dragNote, dragChangePriority};
