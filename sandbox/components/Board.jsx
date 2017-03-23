@@ -1,6 +1,5 @@
 import { setInitialNotes } from './../store/actions/actionsNotesState.js';
 import {filterFunctions} from './../own-modules/filterFuncs.js';
-import { constants } from './../constants/constants.js';
 import React, { Component } from 'react';
 import AddButton from './AddButton.jsx';
 import { connect } from 'react-redux';
@@ -9,6 +8,7 @@ import Filters from './Filters.jsx';
 import Loader from './Loader.jsx';
 import Note from './Note.jsx';
 import 'whatwg-fetch';
+
 
 const mapStateToProps = state => ({notes: state.noteState, filterState: state.filtersState.toJS()});
 
@@ -32,10 +32,8 @@ class Board extends Component{
     }
 
     filterNotes(notes, filters){
-        return [constants.CONTENT_FILTER, constants.PRIORITY_FILTER, constants.DATE_FROM_FILTER, constants.DATE_TO_FILTER].reduce((prev, curr) =>{
-            return filterFunctions[curr].call(filterFunctions, prev, filters[curr]);
-        }, [...notes]);
-    };
+        return Object.keys(filterFunctions).reduce((prev, curr) => filterFunctions[curr].call(filterFunctions, prev, filters[curr]), [...notes]);
+    }
 
     eachNote(note){
         return <Note {...note} key={note.id}/>
