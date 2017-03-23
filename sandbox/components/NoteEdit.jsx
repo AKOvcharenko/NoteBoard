@@ -5,7 +5,7 @@ class NoteEdit extends Component{
     constructor(props) {
         super(props);
         this.priority = this.props.priority;
-        ['submitHandler', 'collectData', 'changeRadio', 'keyDownHandler', 'changeHandler'].forEach(func => this[func] = this[func].bind(this));
+        ['submitHandler', 'collectData', 'changeRadio', 'keyDownHandler'].forEach(func => this[func] = this[func].bind(this));
     }
 
     changeRadio(event){
@@ -32,16 +32,21 @@ class NoteEdit extends Component{
     changeHandler(){}
 
     keyDownHandler(event){
-        const { addingState, removeNote} = this.props;
-        if(addingState && event.keyCode == 27){removeNote.call(this);}
+        const { removeNote, priority} = this.props;
+        if(!priority && event.keyCode == 27){removeNote.call(this);}
+    }
+
+    componentDidMount(){
+        let shadow = document.querySelector('.shadow');
+        shadow && shadow.focus();
     }
 
     render(){
         let {id, title, text, priority, creationDate, removeNote} = this.props;
-        let { keyDownHandler, submitHandler, changeRadio, changeHandler } = this;
+        let { submitHandler, changeRadio, changeHandler, keyDownHandler } = this;
         return (
-            <div onKeyDown={keyDownHandler} className="just-added-note">
-                <div onClick={removeNote.bind(this)} className="shadow"></div>
+            <div onKeyDown={!priority && keyDownHandler} className={`${!priority ? 'just-added-note' : ''}`}>
+                {!priority && <div tabIndex="0" onClick={removeNote.bind(this)} className="shadow"></div>}
                 <div className={`note editing priority-${priority}`}>
                     <form onSubmit={submitHandler}>
                         <input placeholder="Title" type="text" ref="title" className="title form-control" key={`key-title-id-${id}`} onChange={changeHandler} defaultValue={title}/>
